@@ -22,7 +22,7 @@ namespace FinalOdevApp.Model
         public FirestoreService()
         {
             // Firebase konsolundan indirdiğiniz json dosyasının yolunu belirtin
-            string filepath = "C:\\Users\\Win11\\Desktop\\PC Engineer\\MAUI\\FinalOdevApp\\FinalOdevApp\\Resources\\Raw\\mauiapp-1bbc9-firebase-adminsdk-z2bys-a60d341b0c.json";
+            string filepath = Path.Combine(AppContext.BaseDirectory,"Resources","mauiapp-1bbc9-firebase-adminsdk-z2bys-a60d341b0c.json");
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", filepath);
             _firestoreDb = FirestoreDb.Create("mauiapp-1bbc9");
         }
