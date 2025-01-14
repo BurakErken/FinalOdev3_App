@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalOdevApp.AddPage"
+             Title="AddPage">
+    <VerticalStackLayout Padding="20" Spacing="15">
+        <Label Text="Başlık" FontSize="Medium" FontAttributes="Bold"/>
+        <Entry x:Name="TitleEntry" 
+               Text="{Binding Title}"
+               Placeholder="Başlık giriniz"/>
+
+        <Label Text="Açıklama" FontSize="Medium" FontAttributes="Bold"/>
+        <Editor x:Name="DescriptionEditor"
+                Text="{Binding Description}"
+                HeightRequest="200"
+                Placeholder="Açıklama giriniz"/>
+
+        <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+            <Button Text="Kaydet"
+                    Clicked="OnSaveClicked"
+                    BackgroundColor="{DynamicResource Primary}"/>
+            <Button Text="İptal"
+                    Clicked="OnCancelClicked"/>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

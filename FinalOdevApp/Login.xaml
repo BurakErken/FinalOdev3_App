@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalOdevApp.Login"
+             Title="Login">
+    <VerticalStackLayout Padding="20" HorizontalOptions="Center" VerticalOptions="Center">
+        <Frame BorderColor="MediumPurple" BackgroundColor="Transparent">
+            <VerticalStackLayout Spacing="25" Margin="50">
+                <Label Text="Giriş Yap" FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="Center" Margin="0,0,0,20"/>
+                <Entry HeightRequest="40" Placeholder="Email" Text="{Binding Email}" Keyboard="Email" />
+                <Entry HeightRequest="40" Placeholder="Password" Text="{Binding Password}" IsPassword="True" />
+                <Button WidthRequest="300" Text="Login" Command="{Binding LoginCommand}" />
+                <Button WidthRequest="300" TextColor="red" BackgroundColor="Transparent" BorderColor="Transparent" Text="Hesabım Yok" Clicked="GoToRegisterPageAsync"/>
+            </VerticalStackLayout>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>

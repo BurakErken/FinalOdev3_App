@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalOdevApp.Hava"
+             Title="Hava">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="plus.png" Order="Primary" Clicked="OnAddClicked"/>
+        <ToolbarItem IconImageSource="refresh.png" Order="Primary"/>
+    </ContentPage.ToolbarItems>
+    
+    <ScrollView>
+        <VerticalStackLayout Padding="20">
+        <CollectionView x:Name="weatherCollection" ItemsSource="{Binding WeatherList}" 
+                        VerticalOptions="FillAndExpand">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Spacing="20">
+                            <Frame BackgroundColor="LightGreen"  Margin="10" Padding="10" BorderColor="Gray" CornerRadius="10">
+                                <Grid Margin="10" RowDefinitions="*,*" ColumnDefinitions="*,*">
+                                    <Label Text="{Binding City}" FontSize="18" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" TextColor="Black"/>
+                                    <ImageButton Grid.Column="1" Source="remove.png" 
+                                                 Scale="1"
+                                                 HeightRequest="15" WidthRequest="15"
+                                                 HorizontalOptions="End"
+                                                 Clicked="OnDeleteClicked"
+                                                 CommandParameter="{Binding .}" Grid.Row="0"/>
+                                    <Image Grid.Row="1" Grid.ColumnSpan="2" Source="{Binding WeatherImageUrl}" Aspect="AspectFit" HeightRequest="150" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                </Grid>
+                            </Frame>
+                        </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

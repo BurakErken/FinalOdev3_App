@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalOdevApp.Kurlar"
+             Title="Kurlar">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="refresh.png" Order="Primary" Clicked="OnRefreshClicked"/>
+    </ContentPage.ToolbarItems>
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <CollectionView x:Name="CurrencyCollectionView"
+                            ItemsLayout="VerticalList">
+                <CollectionView.Header>
+                    <Frame BackgroundColor="Wheat" Padding="15" CornerRadius="10">
+                        <Grid Margin="15" ColumnDefinitions="*,*,*,*,*">
+                            <Label Text="Döviz"  FontSize="18" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+                            <Label Text="Alış"   FontSize="18" FontAttributes="Bold" HorizontalTextAlignment="Center" Grid.Column="1" />
+                            <Label Text="Satış"  FontSize="18"   FontAttributes="Bold" HorizontalTextAlignment="Center" Grid.Column="2" />
+                            <Label Text="Değişim" FontSize="18"  FontAttributes="Bold" HorizontalTextAlignment="Center" Grid.Column="3" />
+                            <Label Text="Yön" FontSize="18" FontAttributes="Bold" HorizontalTextAlignment="Center" Grid.Column="4" />
+                        </Grid>
+                    </Frame>
+                </CollectionView.Header>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Spacing="20">
+                            <Frame Padding="10"
+                               CornerRadius="10"
+                               HasShadow="True">
+                            <Grid ColumnDefinitions="*,*,*,*,*">
+                                <Label Text="{Binding CurrencyType}"
+                                       FontSize="18"
+                                       FontAttributes="Bold"
+                                       HorizontalTextAlignment="Center"
+                                       Grid.Column="0"/>
+                                <Label Text="{Binding Buy}"
+                                       FontSize="16"
+                                       HorizontalTextAlignment="Center"
+                                           Grid.Column="1" />
+                                <Label Text="{Binding Sell}"
+                                       HorizontalTextAlignment="Center"
+                                           FontSize="16"
+                                           Grid.Column="2"/>
+                                <Label Text="{Binding Change}"
+                                       HorizontalTextAlignment="Center"
+                                           FontSize="16"
+                                           Grid.Column="3"/>
+                                <Image Source="{Binding Image}" WidthRequest="50"
+                                       Grid.Column="4"/>
+                            </Grid>
+                        </Frame>
+                      </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+
+</ContentPage>

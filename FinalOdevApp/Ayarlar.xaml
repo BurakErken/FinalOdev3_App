@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalOdevApp.Ayarlar"
+             Title="Ayarlar">
+    <VerticalStackLayout>
+        <Frame CornerRadius="10" BackgroundColor="DarkCyan">
+            <StackLayout>
+                <Frame>
+                    <Grid ColumnDefinitions="*,*">
+                        <Label Grid.Column="0" FontSize="Medium" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" Text="Tema Değiştir" VerticalOptions="Center"/>
+                        <Switch Grid.Column="1" Scale="1.3" HorizontalOptions="Center" VerticalOptions="Center" x:Name="ThemeToggle" Toggled="OnThemeToggled"/>
+                    </Grid>
+                </Frame>
+            </StackLayout>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>
